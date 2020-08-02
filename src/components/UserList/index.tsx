@@ -30,6 +30,14 @@ const UserList: React.FC = () => {
 
             <Role>Offline - 1</Role>
             <UserRow nickname="Violet Evergarden" isBot />
+            {Array.from(Array(12).keys()).map(n => {
+                //Sort random number
+                const rand = Math.floor(Math.random() * (1 + 50) + 1)
+                
+                return rand <= 10
+                    ? <UserRow nickname="Beutrano" isBot />
+                    : <UserRow nickname="Fulano" />
+            })}
         </Container>
     )
 }
